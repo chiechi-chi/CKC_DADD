@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "886897070514",
+    "project_id": "ckcda-e9d59",
+    "storage_bucket": "ckcda-e9d59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886897070514:android:49cad953ca7934b9e414ab",
+        "android_client_info": {
+          "package_name": "com.example.doan_ltdd_chk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886897070514-15lecpd2hgotokdmsbu9if68oqb0tq2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUmMHyTIHNlQSGTOYaXD85sBbnymKCRN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886897070514-15lecpd2hgotokdmsbu9if68oqb0tq2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

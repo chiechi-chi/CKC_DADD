@@ -1,33 +1,48 @@
 import 'package:doan_ltdd_chk/store_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Myapp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        home: MyHomePage(title: ''));
+      home: HomePage(),
+    );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
+  Future<FirebaseApp> _initinalzeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Store());
+    return Scaffold(
+      body: FutureBuilder(
+        future: _initinalzeFirebase(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return login();
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
+    );
   }
-} // commnt
+}

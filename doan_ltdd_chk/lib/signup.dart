@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class sigup extends StatefulWidget {
@@ -12,6 +13,9 @@ class sigup extends StatefulWidget {
 }
 
 class _sigup extends State<sigup> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +92,22 @@ class _sigup extends State<sigup> {
                       Color.fromARGB(255, 51, 10, 146).withOpacity(0.8)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)))),
-              onPressed: () async {},
+              onPressed: () async {
+                try {
+                  final newuser = _auth.createUserWithEmailAndPassword(
+                      email: _emailController.text,
+                      password: _passwordController.text);
+                  if (newuser != null) {
+                    Navigator.pop(context, 'Đăng Ký thành công!');
+                  } else {
+                    final snackBar =
+                        SnackBar(content: Text('Tài khoản này không hợp lệ'));
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
+                } catch (e) {
+                  final snackBar = SnackBar(content: Text('Có lỗi xảy ra!'));
+                }
+              },
               child: const Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Text('Đăng Kí'),
