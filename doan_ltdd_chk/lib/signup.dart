@@ -13,9 +13,25 @@ class sigup extends StatefulWidget {
 }
 
 class _sigup extends State<sigup> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
   final _auth = FirebaseAuth.instance;
+  @override
+  void dispose() {
+    email.dispose();
+    password.dispose();
+    super.dispose();
+  }
+
+  Future signUp() async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+          email: email.text.trim(), password: password.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +58,7 @@ class _sigup extends State<sigup> {
               padding: EdgeInsets.fromLTRB(55, 20, 0, 0),
               width: MediaQuery.of(context).size.width * 0.75,
               child: TextField(
+                controller: email,
                 style: TextStyle(color: Color.fromARGB(255, 20, 20, 20)),
                 decoration: InputDecoration(
                     filled: true,
@@ -68,6 +85,7 @@ class _sigup extends State<sigup> {
               padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
               width: MediaQuery.of(context).size.width * 0.7,
               child: TextField(
+                controller: password,
                 obscureText: true,
                 style: TextStyle(color: Color.fromARGB(255, 19, 18, 18)),
                 decoration: InputDecoration(
@@ -92,22 +110,22 @@ class _sigup extends State<sigup> {
                       Color.fromARGB(255, 51, 10, 146).withOpacity(0.8)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)))),
-              onPressed: () async {
-                try {
-                  final newuser = _auth.createUserWithEmailAndPassword(
-                      email: _emailController.text,
-                      password: _passwordController.text);
-                  if (newuser != null) {
-                    Navigator.pop(context, 'Đăng Ký thành công!');
-                  } else {
-                    final snackBar =
-                        SnackBar(content: Text('Tài khoản này không hợp lệ'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                } catch (e) {
-                  final snackBar = SnackBar(content: Text('Có lỗi xảy ra!'));
-                }
-              },
+              onPressed: signUp,
+              // try {
+              //   final newuser = _auth.createUserWithEmailAndPassword(
+              //       email: _emailController.text,
+              //       password: _passwordController.text);
+              //   if (newuser != null) {
+              //     Navigator.pop(context, 'Đăng Ký thành công!');
+              //   } else {
+              //     final snackBar =
+              //         SnackBar(content: Text('Tài khoản này không hợp lệ'));
+              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              //   }
+              // } catch (e) {
+              //   final snackBar = SnackBar(content: Text('Có lỗi xảy ra!'));
+              // }
+
               child: const Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Text('Đăng Kí'),
