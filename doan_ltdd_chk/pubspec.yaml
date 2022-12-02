@@ -79,6 +79,8 @@ flutter:
    - assets/h13.png
    - assets/h15.png
    - assets/h16.png
+   - assets/h20.png
+   
 
  
   # An image asset can refer to one or more resolution-specific "variants", see

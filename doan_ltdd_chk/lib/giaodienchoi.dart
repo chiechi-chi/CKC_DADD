@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/resume_screen.dart';
 import 'package:flutter/material.dart';
 
 class giaodienchoigame extends StatefulWidget {
@@ -17,101 +18,120 @@ class _giaodienchoigameState extends State<giaodienchoigame> {
         decoration: BoxDecoration(color: Color(0xff152B42)),
         child: Column(children: [
           Padding(padding: EdgeInsets.all(20)),
-          Row(children: [
-            Padding(padding: EdgeInsets.all(3)),
-            Container(
-              width: 20,
-              height: 30,
-              child: Image.asset('assets/11.png'),
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
-            Container(
-              padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
-              decoration:
-                  BoxDecoration(color: Color.fromARGB(255, 243, 245, 247)),
-              child: Row(
-                children: [
-                  Padding(padding: EdgeInsets.all(3)),
-                  Image.asset(
-                    'assets/11.png',
-                    width: 15,
-                    height: 20,
-                  ),
-                  Padding(padding: EdgeInsets.all(3)),
-                  Image.asset(
-                    'assets/11.png',
-                    width: 15,
-                    height: 15,
-                  ),
-                  Padding(padding: EdgeInsets.all(3)),
-                  Image.asset(
-                    'assets/11.png',
-                    width: 15,
-                    height: 15,
-                  ),
-                  Padding(padding: EdgeInsets.all(3)),
-                  Image.asset(
-                    'assets/11.png',
-                    width: 15,
-                    height: 15,
-                  ),
-                  Padding(padding: EdgeInsets.all(3)),
-                  Image.asset(
-                    'assets/11.png',
-                    width: 15,
-                    height: 15,
-                  ),
-                ],
-              ),
-            ),
-            Container(
-                child: IconButton(
-              icon: Icon(Icons.add_box_outlined),
-              color: Colors.white,
-              onPressed: () {},
-            )),
-            Padding(padding: EdgeInsets.fromLTRB(80, 0, 0, 0)),
-            Container(
-              width: 120,
-              height: 30,
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
-                  left: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
-                  right: BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
-                  bottom: BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Padding(padding: EdgeInsets.all(1)),
-                  Image.asset(
-                    'assets/22.png',
-                    width: 20,
-                    height: 15,
-                  ),
-                  Padding(padding: EdgeInsets.all(1)),
-                  Text(
-                    '2000',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  IconButton(
-                    onPressed: (() {}),
-                    icon: Icon(Icons.shopping_cart_checkout_outlined),
-                    color: Colors.white,
-                    iconSize: 18,
-                  ),
-                ],
-              ),
-            ),
-          ]),
           Column(
             children: [
-              Padding(padding: EdgeInsets.all(20)),
+              Row(children: [
+                Padding(padding: EdgeInsets.all(3)),
+                Container(
+                  width: 20,
+                  height: 30,
+                  child: Image.asset('assets/11.png'),
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0, 0, 5, 0)),
+                Container(
+                  padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  decoration:
+                      BoxDecoration(color: Color.fromARGB(255, 243, 245, 247)),
+                  child: Row(
+                    children: [
+                      Padding(padding: EdgeInsets.all(3)),
+                      Image.asset(
+                        'assets/11.png',
+                        width: 15,
+                        height: 20,
+                      ),
+                      Padding(padding: EdgeInsets.all(3)),
+                      Image.asset(
+                        'assets/11.png',
+                        width: 15,
+                        height: 15,
+                      ),
+                      Padding(padding: EdgeInsets.all(3)),
+                      Image.asset(
+                        'assets/11.png',
+                        width: 15,
+                        height: 15,
+                      ),
+                      Padding(padding: EdgeInsets.all(3)),
+                      Image.asset(
+                        'assets/11.png',
+                        width: 15,
+                        height: 15,
+                      ),
+                      Padding(padding: EdgeInsets.all(3)),
+                      Image.asset(
+                        'assets/11.png',
+                        width: 15,
+                        height: 15,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                    child: IconButton(
+                  icon: Icon(Icons.add_box_outlined),
+                  color: Colors.white,
+                  onPressed: () {},
+                )),
+                Padding(padding: EdgeInsets.fromLTRB(80, 0, 0, 0)),
+                Container(
+                  width: 120,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
+                      left: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
+                      right: BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
+                      bottom:
+                          BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(padding: EdgeInsets.all(1)),
+                      Image.asset(
+                        'assets/22.png',
+                        width: 20,
+                        height: 15,
+                      ),
+                      Padding(padding: EdgeInsets.all(1)),
+                      Text(
+                        '2000',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                        onPressed: (() {}),
+                        icon: Icon(Icons.shopping_cart_checkout_outlined),
+                        color: Colors.white,
+                        iconSize: 18,
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+              Container(
+                  child: Padding(
+                padding: const EdgeInsets.only(right: 300),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResumeScreen(),
+                        ),
+                      );
+                    },
+                    child: Icon(Icons.pause_sharp)),
+              ))
+            ],
+          ),
+          Column(
+            children: [
+              Padding(padding: EdgeInsets.all(10)),
               Text(
                 'Câu #',
                 textAlign: TextAlign.center,
@@ -120,7 +140,7 @@ class _giaodienchoigameState extends State<giaodienchoigame> {
                     fontSize: 30,
                     fontWeight: FontWeight.bold),
               ),
-              Padding(padding: EdgeInsets.all(20)),
+              Padding(padding: EdgeInsets.all(10)),
               Image.asset(
                 "assets/h1.jpg",
                 width: 300,
@@ -171,7 +191,7 @@ class _giaodienchoigameState extends State<giaodienchoigame> {
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
               Column(
                 children: [
                   Row(

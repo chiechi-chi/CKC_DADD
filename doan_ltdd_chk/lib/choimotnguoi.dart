@@ -1,13 +1,14 @@
+import 'package:doan_ltdd_chk/xacnhanchoi.dart';
 import 'package:flutter/material.dart';
 
-class ChoiDoi extends StatefulWidget {
-  const ChoiDoi({super.key});
+class ChoiDon extends StatefulWidget {
+  const ChoiDon({super.key});
 
   @override
-  State<ChoiDoi> createState() => _ChoiDoi();
+  State<ChoiDon> createState() => _ChoiDon();
 }
 
-class _ChoiDoi extends State<ChoiDoi> {
+class _ChoiDon extends State<ChoiDon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +56,14 @@ class _ChoiDoi extends State<ChoiDoi> {
                         child: Column(
                           children: [
                             ElevatedButton(
-                              onPressed: (() {}),
+                              onPressed: (() {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Xacnhan(),
+                                  ),
+                                );
+                              }),
                               child: ClipRRect(
                                 child: Container(
                                   color: Color.fromARGB(255, 12, 1, 73),

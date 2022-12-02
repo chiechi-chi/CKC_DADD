@@ -2,6 +2,7 @@ import 'package:doan_ltdd_chk/signup.dart';
 import 'package:doan_ltdd_chk/store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:doan_ltdd_chk/trangchu.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -33,6 +34,7 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     TextEditingController _emailController = TextEditingController();
     TextEditingController _passwordController = TextEditingController();
+    FirebaseAuth auth = FirebaseAuth.instance;
     return Padding(
       padding: const EdgeInsets.all(0.00),
       child: Container(
@@ -99,7 +101,7 @@ class _loginState extends State<login> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Store(),
+                                builder: (context) => home(),
                               ),
                             );
                           },
@@ -149,7 +151,7 @@ class _loginState extends State<login> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Store(),
+                          builder: (context) => home(),
                         ),
                       );
                     } else {

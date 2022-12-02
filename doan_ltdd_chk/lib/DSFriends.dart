@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/addFriend_screen.dart';
 import 'package:flutter/material.dart';
 
 class DSBanbe extends StatefulWidget {
@@ -21,7 +22,7 @@ class _DSBanbe extends State<DSBanbe> {
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
               child: const Text(
-                'Danh Sách ban be',
+                'Danh Sách bạn bè',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -235,7 +236,12 @@ class _DSBanbe extends State<DSBanbe> {
                       Container(
                         padding: EdgeInsets.fromLTRB(170, 10, 0, 0),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ThemBanbe()));
+                          },
                           child: Text(
                             'Thêm bạn bè +',
                             style: TextStyle(

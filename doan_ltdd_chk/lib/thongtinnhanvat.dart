@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/DSFriends.dart';
 import 'package:flutter/material.dart';
 
 class infor extends StatefulWidget {
@@ -37,7 +38,7 @@ class _infor extends State<infor> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/h2.jpg',
+                    'assets/h16.png',
                     width: 60,
                     height: 60,
                   ),
@@ -93,7 +94,14 @@ class _infor extends State<infor> {
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ElevatedButton(
-                    onPressed: () => {},
+                    onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DSBanbe(),
+                        ),
+                      )
+                    },
                     child: Text('Bạn bè'),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
