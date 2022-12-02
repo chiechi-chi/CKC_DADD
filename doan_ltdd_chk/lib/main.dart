@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/lichsu.dart';
 import 'package:doan_ltdd_chk/store_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         future: _initinalzeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return login();
+            return history();
           }
           return const Center(
             child: CircularProgressIndicator(),
