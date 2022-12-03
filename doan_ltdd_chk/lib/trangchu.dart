@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/lichsu.dart';
 import 'package:flutter/material.dart';
 import 'choihainguoi.dart';
 import 'choimotnguoi.dart';
@@ -284,7 +285,7 @@ class _homeState extends State<home> {
       floatingActionButton: Container(
         width: 90,
         child: SizedBox(
-          height: 100,
+          height: 80,
           child: FloatingActionButton(
             child: Icon(
               Icons.info,
@@ -306,7 +307,7 @@ class _homeState extends State<home> {
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 80,
+          height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -330,7 +331,16 @@ class _homeState extends State<home> {
                     );
                   }),
                   icon: Icon(Icons.shop_two)),
-              IconButton(onPressed: (() {}), icon: Icon(Icons.shield)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => history(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.history)),
               IconButton(
                   onPressed: (() {
                     Navigator.push(

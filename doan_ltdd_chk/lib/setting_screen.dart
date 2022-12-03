@@ -1,4 +1,8 @@
+import 'package:doan_ltdd_chk/lichsu.dart';
+import 'package:doan_ltdd_chk/store_screen.dart';
+import 'package:doan_ltdd_chk/trangchu.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class setting extends StatefulWidget {
   const setting({super.key});
@@ -130,19 +134,30 @@ class _setting extends State<setting> {
             ),
           ),
           Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
+          ElevatedButton(
+            onPressed: () => FirebaseAuth.instance.signOut(),
+            child: const Text("Đăng Xuất"),
+          )
         ]),
       ),
       floatingActionButton: Container(
         width: 90,
         child: SizedBox(
-          height: 100,
+          height: 80,
           child: FloatingActionButton(
             child: Icon(
               Icons.home,
               size: 40,
             ),
             backgroundColor: Color.fromARGB(255, 40, 3, 105),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => home(),
+                ),
+              );
+            },
           ),
         ),
       ),
@@ -150,14 +165,41 @@ class _setting extends State<setting> {
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         child: Container(
-          height: 80,
+          height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(onPressed: (() {}), icon: Icon(Icons.flash_on)),
-              IconButton(onPressed: (() {}), icon: Icon(Icons.shop_two)),
-              IconButton(onPressed: (() {}), icon: Icon(Icons.shield)),
-              IconButton(onPressed: (() {}), icon: Icon(Icons.settings)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => home(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.shop_two)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => history(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.history)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => setting(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.settings)),
             ],
           ),
         ),
