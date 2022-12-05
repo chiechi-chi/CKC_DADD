@@ -80,6 +80,8 @@ flutter:
    - assets/h15.png
    - assets/h16.png
    - assets/h20.png
+   - assets/icons/bg.svg
+   - assets/icons/clock.svg
    
 
  

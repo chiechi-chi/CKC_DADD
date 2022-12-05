@@ -1,8 +1,8 @@
-import 'package:doan_ltdd_chk/signup.dart';
-import 'package:doan_ltdd_chk/store_screen.dart';
+import 'signup.dart';
+import 'store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:doan_ltdd_chk/trangchu.dart';
+import 'trangchu.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);

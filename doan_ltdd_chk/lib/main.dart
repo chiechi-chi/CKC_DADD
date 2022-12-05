@@ -1,8 +1,8 @@
-import 'package:doan_ltdd_chk/lichsu.dart';
-import 'package:doan_ltdd_chk/store_screen.dart';
+import 'screens/lichsu.dart';
+import 'screens/store_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'screens/login.dart';
 
 void main() {
   runApp(const Myapp());
