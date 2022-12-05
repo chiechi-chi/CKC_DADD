@@ -1,4 +1,4 @@
-import 'package:doan_ltdd_chk/resume_screen.dart';
+import 'resume_screen.dart';
 import 'package:flutter/material.dart';
 
 class giaodienchoigame extends StatefulWidget {

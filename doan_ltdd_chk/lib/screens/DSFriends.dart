@@ -1,4 +1,4 @@
-import 'package:doan_ltdd_chk/addFriend_screen.dart';
+import 'addFriend_screen.dart';
 import 'package:flutter/material.dart';
 
 class DSBanbe extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:doan_ltdd_chk/xacnhanchoi.dart';
+import 'xacnhanchoi.dart';
 import 'package:flutter/material.dart';
 
 class ChoiDon extends StatefulWidget {

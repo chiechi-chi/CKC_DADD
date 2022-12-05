@@ -1,13 +1,13 @@
-import 'package:doan_ltdd_chk/lichsu.dart';
+import 'lichsu.dart';
 import 'package:flutter/material.dart';
 import 'choihainguoi.dart';
 import 'choimotnguoi.dart';
-import 'package:doan_ltdd_chk/rank.dart';
-import 'package:doan_ltdd_chk/setting_screen.dart';
-import 'package:doan_ltdd_chk/store_screen.dart';
-import 'package:doan_ltdd_chk/thongtinnhanvat.dart';
+import 'rank.dart';
+import 'setting_screen.dart';
+import 'store_screen.dart';
+import 'thongtinnhanvat.dart';
 import 'choimotnguoi.dart';
-import 'package:doan_ltdd_chk/sukien.dart';
+import 'sukien.dart';
 
 class home extends StatefulWidget {
   const home({super.key});

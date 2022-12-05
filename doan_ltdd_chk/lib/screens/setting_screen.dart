@@ -1,6 +1,6 @@
-import 'package:doan_ltdd_chk/lichsu.dart';
-import 'package:doan_ltdd_chk/store_screen.dart';
-import 'package:doan_ltdd_chk/trangchu.dart';
+import 'lichsu.dart';
+import 'store_screen.dart';
+import 'trangchu.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

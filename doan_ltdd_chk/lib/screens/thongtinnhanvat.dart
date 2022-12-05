@@ -1,4 +1,4 @@
-import 'package:doan_ltdd_chk/DSFriends.dart';
+import 'DSFriends.dart';
 import 'package:flutter/material.dart';
 
 class infor extends StatefulWidget {
