@@ -13,6 +13,7 @@ class setting extends StatefulWidget {
 
 class _setting extends State<setting> {
   double val = 20.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

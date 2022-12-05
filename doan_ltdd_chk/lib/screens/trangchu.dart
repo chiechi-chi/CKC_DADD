@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'lichsu.dart';
+
 import 'package:flutter/material.dart';
 import 'choihainguoi.dart';
 import 'choimotnguoi.dart';
 import 'rank.dart';
-import 'setting_screen.dart';
+import 'package:doan_ltdd_chk/screens/setting_screen.dart';
 import 'store_screen.dart';
 import 'thongtinnhanvat.dart';
 import 'choimotnguoi.dart';
@@ -19,6 +22,7 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       body: Container(
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
