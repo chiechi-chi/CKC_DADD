@@ -89,8 +89,7 @@ class _Xacnhan extends State<Xacnhan> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                giaodienchoigame(),
+                                            builder: (context) => QuizScreen(),
                                           ),
                                         );
                                       },
