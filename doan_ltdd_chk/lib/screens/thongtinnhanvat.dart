@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'DSFriends.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,7 @@ class infor extends StatefulWidget {
 class _infor extends State<infor> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -43,7 +46,7 @@ class _infor extends State<infor> {
                     height: 60,
                   ),
                   Padding(padding: EdgeInsets.all(10)),
-                  Text('Tên tài khoản', style: TextStyle(color: Colors.white)),
+                  Text(user.email!, style: TextStyle(color: Colors.white)),
                   Row(children: [
                     Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 120)),
                     Text(
