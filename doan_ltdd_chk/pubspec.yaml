@@ -44,6 +44,7 @@ dependencies:
   get: ^4.6.5
   flutter_svg: ^1.1.6
   websafe_svg: ^2.1.2+7
+  firebase_storage: ^11.0.6
 
 dev_dependencies:
   flutter_test:

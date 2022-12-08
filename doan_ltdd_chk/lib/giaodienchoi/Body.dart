@@ -31,14 +31,20 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                Text.rich(
-                  TextSpan(
-                      text: "Câu 1",
-                      style: TextStyle(color: Colors.white, fontSize: 30),
+                Obx(
+                  () => Text.rich(
+                    TextSpan(
+                      text:
+                          "Question ${_questionController.questionNumber.value}",
+                      style: TextStyle(color: Colors.white, fontSize: 40),
                       children: [
                         TextSpan(
-                            text: "/10", style: TextStyle(color: Colors.white))
-                      ]),
+                          text: "/${_questionController.questions.length}",
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Divider(
                   thickness: 1.5,
@@ -46,6 +52,9 @@ class Body extends StatelessWidget {
                 ),
                 Expanded(
                     child: PageView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        controller: _questionController.pageController,
+                        onPageChanged: _questionController.updateTheQnNum,
                         itemCount: _questionController.questions.length,
                         itemBuilder: (context, index) => QuestionCard(
                               question: _questionController.questions[index],

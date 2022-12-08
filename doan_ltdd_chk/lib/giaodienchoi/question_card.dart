@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
+import 'package:get/get.dart';
 import 'option.dart';
 import 'Body.dart';
+import 'package:doan_ltdd_chk/controllers/question_controller.dart';
 
 class QuestionCard extends StatelessWidget {
   const QuestionCard({
@@ -13,6 +15,7 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    QuestionController _controller = Get.put(QuestionController());
     return Column(
       children: [
         Column(
@@ -32,10 +35,13 @@ class QuestionCard extends StatelessWidget {
         ),
         Column(
           children: [
-            Options(),
-            Options(),
-            Options(),
-            Options(),
+            ...List.generate(
+                question.options.length,
+                (index) => Options(
+                      text: question.options[index],
+                      index: index,
+                      press: () => _controller.checkAns(question, index),
+                    ))
           ],
         )
       ],

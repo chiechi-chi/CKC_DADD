@@ -1,3 +1,6 @@
+import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
+import 'package:get/get.dart';
+
 import 'screens/lichsu.dart';
 import 'screens/store_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,7 +15,7 @@ class Myapp extends StatelessWidget {
   const Myapp({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: HomePage(),
     );
   }
@@ -37,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         future: _initinalzeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return login();
+            return QuizScreen();
           }
           return const Center(
             child: CircularProgressIndicator(),
