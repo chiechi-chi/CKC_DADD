@@ -12,18 +12,28 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  FirebaseAuth auth = FirebaseAuth.instance;
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("Khong tim thay ten tai khoan hoac email");
+      }
+    }
+    return user;
   }
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _emailController = TextEditingController();
+    TextEditingController _passwordController = TextEditingController();
     return Padding(
       padding: const EdgeInsets.all(0.00),
       child: Container(
@@ -123,18 +133,38 @@ class _loginState extends State<login> {
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 16, 66, 106),
                       onPrimary: Colors.white),
-                  onPressed: signIn,
+                  onPressed: () async {
+                    showDialog(
+                        context: context,
+                        builder: (context) => Center(
+                              child: CircularProgressIndicator(),
+                            ));
+                    User? user = await loginUsingEmailPassword(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                        context: context);
+
+                    print(user);
+
+                    if (user != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => home(),
+                        ),
+                      );
+                    } else {
+                      final snackBar = SnackBar(
+                          content:
+                              Text('TAi khoan hoac mat khau khong hop le'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
+                  },
                   child: const Text('Đăng nhập')),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
   }
 }
