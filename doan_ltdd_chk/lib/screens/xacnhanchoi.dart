@@ -87,9 +87,12 @@ class _Xacnhan extends State<Xacnhan> {
                                       ],
                                     ),
                                   ),
+                                  // Muc do de
                                   StreamBuilder(
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
+                                        .where("levels", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 1)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -117,35 +120,83 @@ class _Xacnhan extends State<Xacnhan> {
                                                 ),
                                               );
                                             },
-                                            title: 'Bắt đầu',
+                                            title: 'Dễ',
                                           ),
-                                          Container(
-                                            padding: EdgeInsets.all(30),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  'Tổng câu hỏi:',
-                                                  style: TextStyle(
-                                                      color: Color.fromARGB(
-                                                          255, 255, 255, 255),
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 20),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  StreamBuilder(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Questions')
+                                        .where("levels", isEqualTo: 2)
+                                        .where("topics", isEqualTo: 1)
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
+                                      final questionDocs = snapshot.data!.docs;
+                                      final question = questionDocs
+                                          .map((e) => Question
+                                              .fromQueryDocumentSnapshot(e))
+                                          .toList();
+
+                                      return Column(
+                                        children: [
+                                          ActionButton(
+                                            onTap: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      QuizScreen(
+                                                    totalTime: 60,
+                                                    questions: question,
+                                                  ),
                                                 ),
-                                                Text(
-                                                  '10 câu',
-                                                  style: TextStyle(
-                                                      color: Color.fromARGB(
-                                                          255, 255, 255, 255),
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 20),
+                                              );
+                                            },
+                                            title: 'Thường',
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  StreamBuilder(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Questions')
+                                        .where("levels", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 1)
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
+                                      final questionDocs = snapshot.data!.docs;
+                                      final question = questionDocs
+                                          .map((e) => Question
+                                              .fromQueryDocumentSnapshot(e))
+                                          .toList();
+
+                                      return Column(
+                                        children: [
+                                          ActionButton(
+                                            onTap: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      QuizScreen(
+                                                    totalTime: 60,
+                                                    questions: question,
+                                                  ),
                                                 ),
-                                              ],
-                                            ),
+                                              );
+                                            },
+                                            title: 'Khó',
                                           ),
                                         ],
                                       );
