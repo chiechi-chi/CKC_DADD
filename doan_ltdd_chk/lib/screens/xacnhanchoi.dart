@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doan_ltdd_chk/models/Questions.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'giaodienchoi.dart';
+import 'package:doan_ltdd_chk/controllers/question_controller.dart';
 
 class Xacnhan extends StatefulWidget {
   const Xacnhan({super.key});
@@ -10,6 +14,7 @@ class Xacnhan extends StatefulWidget {
 }
 
 class _Xacnhan extends State<Xacnhan> {
+//  QuestionController _qnController = Get.put(QuestionController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +55,7 @@ class _Xacnhan extends State<Xacnhan> {
                                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                                 child: Column(children: [
                                   Text(
-                                    'Vòng #',
+                                    'Vòng 1',
                                     style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
@@ -72,7 +77,7 @@ class _Xacnhan extends State<Xacnhan> {
                                               fontSize: 20),
                                         ),
                                         Text(
-                                          '0/10',
+                                          "0/10",
                                           style: TextStyle(
                                               color: Color.fromARGB(
                                                   255, 255, 255, 255),
@@ -82,27 +87,70 @@ class _Xacnhan extends State<Xacnhan> {
                                       ],
                                     ),
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.all(30),
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => QuizScreen(),
-                                          ),
+                                  StreamBuilder(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Questions')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
                                         );
-                                      },
-                                      child: Text(
-                                        'Vào chơi',
-                                        style: TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255),
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                  )
+                                      }
+                                      final questionDocs = snapshot.data!.docs;
+                                      final question = questionDocs
+                                          .map((e) => Question
+                                              .fromQueryDocumentSnapshot(e))
+                                          .toList();
+
+                                      return Column(
+                                        children: [
+                                          ActionButton(
+                                            onTap: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      QuizScreen(
+                                                    totalTime: 60,
+                                                    questions: question,
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                            title: 'Bắt đầu',
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.all(30),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'Tổng câu hỏi:',
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 255, 255, 255),
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 20),
+                                                ),
+                                                Text(
+                                                  '10 câu',
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 255, 255, 255),
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 20),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
                                 ]),
                               ),
                             ),
@@ -116,6 +164,26 @@ class _Xacnhan extends State<Xacnhan> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ActionButton extends StatelessWidget {
+  const ActionButton({
+    Key? key,
+    required this.title,
+    required this.onTap,
+  }) : super(key: key);
+
+  final String title;
+  final Function onTap;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: ElevatedButton(
+        onPressed: () => onTap(),
+        child: Text(title),
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
+import 'package:doan_ltdd_chk/screens/xacnhanchoi.dart';
 import 'package:get/get.dart';
 
 import 'screens/lichsu.dart';
@@ -8,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'screens/login.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseApp firebaseApp;
   runApp(const Myapp());
 }
 
@@ -40,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         future: _initinalzeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return login();
+            return home();
           }
           return const Center(
             child: CircularProgressIndicator(),

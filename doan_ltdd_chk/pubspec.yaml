@@ -86,7 +86,7 @@ flutter:
    - assets/h20.png
    - assets/icons/bg.svg
    - assets/icons/clock.svg
-   
+   - assets/icons/category/
 
  
   # An image asset can refer to one or more resolution-specific "variants", see

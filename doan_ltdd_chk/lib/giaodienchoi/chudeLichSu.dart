@@ -1,16 +1,15 @@
-import 'package:doan_ltdd_chk/giaodienchoi/chudeLichSu.dart';
-
-import 'xacnhanchoi.dart';
+import 'package:doan_ltdd_chk/giaodienchoi/chudeDiaLy.dart';
+import 'package:doan_ltdd_chk/screens/choimotnguoi.dart';
 import 'package:flutter/material.dart';
 
-class ChoiDon extends StatefulWidget {
-  const ChoiDon({super.key});
+class NetxPage extends StatefulWidget {
+  const NetxPage({super.key});
 
   @override
-  State<ChoiDon> createState() => _ChoiDon();
+  State<NetxPage> createState() => _NetxPage();
 }
 
-class _ChoiDon extends State<ChoiDon> {
+class _NetxPage extends State<NetxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,12 +58,7 @@ class _ChoiDon extends State<ChoiDon> {
                         child: Column(
                           children: [
                             MaterialButton(
-                              onPressed: (() {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Xacnhan()));
-                              }),
+                              onPressed: (() {}),
                               child: ClipRRect(
                                 child: Container(
                                   color: Color.fromARGB(255, 12, 1, 73),
@@ -72,7 +66,7 @@ class _ChoiDon extends State<ChoiDon> {
                                   height: 300,
                                   child: Center(
                                       child: Text(
-                                    'Chương 1',
+                                    'Chương 2',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.normal,
@@ -103,7 +97,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 2',
+                      //                     'Vòng 10',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -137,7 +131,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 3',
+                      //                     'Vòng 11',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -171,7 +165,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 4',
+                      //                     'Vòng 12',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -212,7 +206,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                     child: Text(
-                      //                   'Vòng 5',
+                      //                   'Vòng 13',
                       //                   style: TextStyle(
                       //                     color: Color.fromARGB(255, 255, 255, 255),
                       //                     fontWeight: FontWeight.normal,
@@ -243,7 +237,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 6',
+                      //                     'Vòng 14',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -277,7 +271,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 7',
+                      //                     'Vòng 15',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -311,7 +305,7 @@ class _ChoiDon extends State<ChoiDon> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 8',
+                      //                     'Vòng 16',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -346,7 +340,12 @@ class _ChoiDon extends State<ChoiDon> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChoiDon()));
+                      },
                       child: Text(
                         "<",
                         style: TextStyle(fontSize: 20),
@@ -380,7 +379,7 @@ class _ChoiDon extends State<ChoiDon> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const NetxPage()));
+                                builder: (context) => const NetxPageDiaLy()));
                       },
                       child: Text(
                         ">",
