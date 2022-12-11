@@ -1,15 +1,14 @@
+import 'package:doan_ltdd_chk/choidon/chudedomeo/choimotnguoi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'lichsu.dart';
 
 import 'package:flutter/material.dart';
 import 'choihainguoi.dart';
-import 'choimotnguoi.dart';
 import 'rank.dart';
 import 'package:doan_ltdd_chk/screens/setting_screen.dart';
 import 'store_screen.dart';
 import 'thongtinnhanvat.dart';
-import 'choimotnguoi.dart';
 import 'sukien.dart';
 
 class home extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
+import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'giaodienchoi.dart';
 import 'package:doan_ltdd_chk/controllers/question_controller.dart';
 
 class Xacnhan extends StatefulWidget {
@@ -231,10 +231,17 @@ class ActionButton extends StatelessWidget {
   final Function onTap;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: ElevatedButton(
-        onPressed: () => onTap(),
-        child: Text(title),
+    return Container(
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () => onTap(),
+            child: Text(
+              title,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
       ),
     );
   }

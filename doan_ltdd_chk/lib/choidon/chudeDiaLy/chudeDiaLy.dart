@@ -1,5 +1,5 @@
-import 'package:doan_ltdd_chk/giaodienchoi/chudeLichSu.dart';
-import 'package:doan_ltdd_chk/screens/choimotnguoi.dart';
+import 'package:doan_ltdd_chk/choidon/chudeDiaLy/xacnhanchoiDiaLy.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudeLichSu.dart';
 import 'package:flutter/material.dart';
 
 class NetxPageDiaLy extends StatefulWidget {
@@ -58,7 +58,13 @@ class _NetxPageDiaLy extends State<NetxPageDiaLy> {
                         child: Column(
                           children: [
                             MaterialButton(
-                              onPressed: (() {}),
+                              onPressed: (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const XacnhanDiaLy()));
+                              }),
                               child: ClipRRect(
                                 child: Container(
                                   color: Color.fromARGB(255, 12, 1, 73),
@@ -354,7 +360,12 @@ class _NetxPageDiaLy extends State<NetxPageDiaLy> {
                       color: Colors.white,
                     ),
                     MaterialButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const XacnhanDiaLy()));
+                      }),
                       child: ClipRRect(
                         child: Container(
                           color: Color.fromARGB(255, 12, 1, 73),

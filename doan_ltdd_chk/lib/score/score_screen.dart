@@ -34,9 +34,9 @@
 //     );
 //   }
 // }
+import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
-import 'package:doan_ltdd_chk/screens/xacnhanchoi.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {

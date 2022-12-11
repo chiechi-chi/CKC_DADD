@@ -1,6 +1,5 @@
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
 import 'package:doan_ltdd_chk/screens/trangchu.dart';
-import 'package:doan_ltdd_chk/screens/xacnhanchoi.dart';
 import 'package:get/get.dart';
 
 import 'screens/lichsu.dart';
@@ -44,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         future: _initinalzeFirebase(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return home();
+            return login();
           }
           return const Center(
             child: CircularProgressIndicator(),

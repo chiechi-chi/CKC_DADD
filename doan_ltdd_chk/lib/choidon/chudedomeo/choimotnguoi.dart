@@ -1,15 +1,16 @@
-import 'package:doan_ltdd_chk/giaodienchoi/chudeDiaLy.dart';
-import 'package:doan_ltdd_chk/screens/choimotnguoi.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudeLichSu.dart';
+
+import 'xacnhanchoi.dart';
 import 'package:flutter/material.dart';
 
-class NetxPage extends StatefulWidget {
-  const NetxPage({super.key});
+class ChoiDon extends StatefulWidget {
+  const ChoiDon({super.key});
 
   @override
-  State<NetxPage> createState() => _NetxPage();
+  State<ChoiDon> createState() => _ChoiDon();
 }
 
-class _NetxPage extends State<NetxPage> {
+class _ChoiDon extends State<ChoiDon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,7 @@ class _NetxPage extends State<NetxPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Câu Hỏi Lịch Sử",
+                  "Câu Hỏi Đố Mẹo Dân Gian",
                   style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 20,
@@ -58,7 +59,12 @@ class _NetxPage extends State<NetxPage> {
                         child: Column(
                           children: [
                             MaterialButton(
-                              onPressed: (() {}),
+                              onPressed: (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Xacnhan()));
+                              }),
                               child: ClipRRect(
                                 child: Container(
                                   color: Color.fromARGB(255, 12, 1, 73),
@@ -66,7 +72,7 @@ class _NetxPage extends State<NetxPage> {
                                   height: 300,
                                   child: Center(
                                       child: Text(
-                                    'Chương 2',
+                                    'Chương 1',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.normal,
@@ -97,7 +103,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 10',
+                      //                     'Vòng 2',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -131,7 +137,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 11',
+                      //                     'Vòng 3',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -165,7 +171,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 12',
+                      //                     'Vòng 4',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -206,7 +212,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                     child: Text(
-                      //                   'Vòng 13',
+                      //                   'Vòng 5',
                       //                   style: TextStyle(
                       //                     color: Color.fromARGB(255, 255, 255, 255),
                       //                     fontWeight: FontWeight.normal,
@@ -237,7 +243,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 14',
+                      //                     'Vòng 6',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -271,7 +277,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 15',
+                      //                     'Vòng 7',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -305,7 +311,7 @@ class _NetxPage extends State<NetxPage> {
                       //                 height: 100,
                       //                 child: Center(
                       //                   child: Text(
-                      //                     'Vòng 16',
+                      //                     'Vòng 8',
                       //                     style: TextStyle(
                       //                       color:
                       //                           Color.fromARGB(255, 255, 255, 255),
@@ -340,12 +346,7 @@ class _NetxPage extends State<NetxPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MaterialButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ChoiDon()));
-                      },
+                      onPressed: () {},
                       child: Text(
                         "<",
                         style: TextStyle(fontSize: 20),
@@ -354,7 +355,12 @@ class _NetxPage extends State<NetxPage> {
                       color: Colors.white,
                     ),
                     MaterialButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Xacnhan()));
+                      }),
                       child: ClipRRect(
                         child: Container(
                           color: Color.fromARGB(255, 12, 1, 73),
@@ -379,7 +385,7 @@ class _NetxPage extends State<NetxPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const NetxPageDiaLy()));
+                                builder: (context) => const NetxPage()));
                       },
                       child: Text(
                         ">",
