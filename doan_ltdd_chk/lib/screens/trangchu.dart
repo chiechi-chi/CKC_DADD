@@ -220,7 +220,7 @@ class _homeState extends State<home> {
                               'Chơi một Người',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 77, 39, 39),
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             )),
@@ -260,7 +260,7 @@ class _homeState extends State<home> {
                                     'Chơi Hai Người',
                                     style: TextStyle(
                                       color: Color.fromRGBO(15, 15, 15, 1),
-                                      fontSize: 20,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),

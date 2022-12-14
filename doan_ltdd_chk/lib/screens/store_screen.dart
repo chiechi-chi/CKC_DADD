@@ -141,6 +141,7 @@ class _Store extends State<Store> {
                 Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
@@ -149,9 +150,7 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(
-                                              20, 0, 10, 0)),
+                                     
                                       Column(children: [
                                         SizedBox.fromSize(
                                           size: Size(70,
@@ -442,6 +441,7 @@ class _Store extends State<Store> {
                 Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
@@ -450,9 +450,7 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(
-                                              20, 0, 10, 0)),
+                                      
                                       Column(children: [
                                         SizedBox.fromSize(
                                           size: Size(70,
@@ -785,10 +783,11 @@ class _Store extends State<Store> {
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
-                Padding(padding: EdgeInsets.all(20)),
+                Padding(padding: EdgeInsets.all(10)),
                 Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
@@ -797,13 +796,11 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                      Padding(
-                                          padding: EdgeInsets.fromLTRB(
-                                              20, 0, 10, 0)),
+                                     
                                       Column(children: [
                                         SizedBox.fromSize(
-                                          size: Size(80,
-                                              80), // button width and height
+                                          size: Size(70,
+                                              70), // button width and height
 
                                           child: Material(
                                             borderRadius:
@@ -840,8 +837,8 @@ class _Store extends State<Store> {
                                               50, 0, 10, 0)),
                                       Column(children: [
                                         SizedBox.fromSize(
-                                          size: Size(80,
-                                              80), // button width and height
+                                          size: Size(70,
+                                              70), // button width and height
 
                                           child: Material(
                                             borderRadius:
@@ -878,8 +875,8 @@ class _Store extends State<Store> {
                                               46, 0, 10, 0)),
                                       Column(children: [
                                         SizedBox.fromSize(
-                                          size: Size(80,
-                                              80), // button width and height
+                                          size: Size(70,
+                                              70), // button width and height
 
                                           child: Material(
                                             borderRadius:
@@ -911,9 +908,7 @@ class _Store extends State<Store> {
                                               fontWeight: FontWeight.normal),
                                         ),
                                       ]),
-                                      Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(5, 0, 20, 0)),
+                                     
                                     ],
                                   ),
                                 ]),
