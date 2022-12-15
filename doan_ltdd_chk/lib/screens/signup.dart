@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class sigup extends StatefulWidget {
   const sigup({
@@ -15,20 +16,41 @@ class sigup extends StatefulWidget {
 class _sigup extends State<sigup> {
   final email = TextEditingController();
   final password = TextEditingController();
+  final confirmpassword = TextEditingController();
+  final username = TextEditingController();
   final _auth = FirebaseAuth.instance;
   @override
   void dispose() {
     email.dispose();
     password.dispose();
+    confirmpassword.dispose();
+    username.dispose();
     super.dispose();
   }
 
   Future signUp() async {
-    try {
+    if (passwordConfirmed()) {
       await _auth.createUserWithEmailAndPassword(
-          email: email.text.trim(), password: password.text.trim());
-    } on FirebaseAuthException catch (e) {
-      print(e);
+        email: email.text.trim(),
+        password: password.text.trim(),
+      );
+
+      addUserDetail(username.text.trim(), email.text.trim());
+    }
+  }
+
+  Future addUserDetail(String UserName, String Email) async {
+    await FirebaseFirestore.instance.collection('users').add({
+      'Name': UserName,
+      'Email': Email,
+    });
+  }
+
+  bool passwordConfirmed() {
+    if (password.text.trim() == confirmpassword.text.trim()) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -46,6 +68,33 @@ class _sigup extends State<sigup> {
         const Text(
           'Đăng kí tài khoản',
           style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        Row(
+          children: [
+            const Text(
+              'Username:',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 247, 244, 244),
+                  fontWeight: FontWeight.normal),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: TextField(
+                controller: username,
+                style: TextStyle(color: Color.fromARGB(255, 19, 18, 18)),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide(color: Colors.white)),
+                    hintText: 'Username',
+                    hintStyle:
+                        TextStyle(color: Color.fromARGB(255, 19, 19, 19))),
+              ),
+            ),
+          ],
         ),
         Row(
           children: [
@@ -101,6 +150,34 @@ class _sigup extends State<sigup> {
             ),
           ],
         ),
+        Row(
+          children: [
+            const Text(
+              'Mật khẩu:',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 247, 244, 244),
+                  fontWeight: FontWeight.normal),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: TextField(
+                controller: confirmpassword,
+                obscureText: true,
+                style: TextStyle(color: Color.fromARGB(255, 19, 18, 18)),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide(color: Colors.white)),
+                    hintText: 'Nhập Lại Mật khẩu',
+                    hintStyle:
+                        TextStyle(color: Color.fromARGB(255, 19, 19, 19))),
+              ),
+            ),
+          ],
+        ),
         Padding(padding: EdgeInsets.all(10)),
         Container(
           padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
@@ -111,21 +188,6 @@ class _sigup extends State<sigup> {
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)))),
               onPressed: signUp,
-              // try {
-              //   final newuser = _auth.createUserWithEmailAndPassword(
-              //       email: _emailController.text,
-              //       password: _passwordController.text);
-              //   if (newuser != null) {
-              //     Navigator.pop(context, 'Đăng Ký thành công!');
-              //   } else {
-              //     final snackBar =
-              //         SnackBar(content: Text('Tài khoản này không hợp lệ'));
-              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              //   }
-              // } catch (e) {
-              //   final snackBar = SnackBar(content: Text('Có lỗi xảy ra!'));
-              // }
-
               child: const Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Text('Đăng Kí'),
