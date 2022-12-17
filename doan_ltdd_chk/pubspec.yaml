@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^1.1.6
   websafe_svg: ^2.1.2+7
   firebase_storage: ^11.0.6
+  google_sign_in: ^5.4.2
 
 dev_dependencies:
   flutter_test:

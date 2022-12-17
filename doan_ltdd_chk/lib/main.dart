@@ -1,8 +1,5 @@
-import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
 import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:get/get.dart';
-
-import 'screens/lichsu.dart';
 import 'screens/store_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

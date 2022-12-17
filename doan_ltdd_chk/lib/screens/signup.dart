@@ -121,7 +121,6 @@ class _sigup extends State<sigup> {
             ),
           ],
         ),
-        Padding(padding: EdgeInsets.all(10)),
         Row(
           children: [
             const Text(

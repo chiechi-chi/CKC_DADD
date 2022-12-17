@@ -1,3 +1,5 @@
+import 'package:doan_ltdd_chk/screens/rank_auth_button.dart';
+
 import 'signup.dart';
 import 'store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -156,7 +158,7 @@ class _loginState extends State<login> {
                     } else {
                       final snackBar = SnackBar(
                           content:
-                              Text('TAi khoan hoac mat khau khong hop le'));
+                              Text('Tài khoản hoặc mật khẩu không hợp lệ'));
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     }
                   },

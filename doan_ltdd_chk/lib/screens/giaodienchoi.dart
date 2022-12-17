@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/score/score_screen.dart';
+import 'package:doan_ltdd_chk/screens/shopbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:websafe_svg/websafe_svg.dart';
-import '../controllers/question_controller.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key, required this.totalTime, required this.questions})
@@ -34,8 +34,7 @@ class _QuizScreenState extends State<QuizScreen> {
       });
 
       if (_currentTime == 0) {
-        _timer.cancel();
-        //pushResultScreen(context);
+        pushResultScreen(context);
       }
     });
   }
@@ -53,11 +52,11 @@ class _QuizScreenState extends State<QuizScreen> {
       body: Container(
         color: Color(0xff152B42),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(16, 50, 16, 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40),
+              ShopBar(),
               SizedBox(
                 height: 40,
                 child: ClipRRect(
@@ -82,22 +81,59 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
               ),
+
               SizedBox(height: 40),
-              Text(
-                'Câu 1',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
+              // Hiển thị câu hỏi
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Câu ${_currentIndex + 1}',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
-                currentQuestion.question,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.3,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 15, 59, 95),
+                  border: Border(
+                    top: BorderSide(width: 2.0, color: Color(0xFFFFDFDFDF)),
+                    left: BorderSide(
+                        width: 2.0, color: Color.fromARGB(255, 252, 252, 252)),
+                    right: BorderSide(
+                        width: 1.0, color: Color.fromARGB(255, 245, 243, 243)),
+                    bottom: BorderSide(
+                        width: 1.0, color: Color.fromARGB(255, 245, 244, 244)),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 20),
+                    Text(
+                      currentQuestion.question,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
