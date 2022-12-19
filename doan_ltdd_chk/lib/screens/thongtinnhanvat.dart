@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:getwidget/getwidget.dart';
 
 import 'DSFriends.dart';
 import 'package:flutter/material.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
+import 'package:doan_ltdd_chk/score/score_screen.dart';
 
 class infor extends StatefulWidget {
   const infor({super.key});
@@ -19,6 +21,7 @@ class _infor extends State<infor> {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
+    final users = FirebaseFirestore.instance.collection('users').snapshots();
 
     return Scaffold(
       body: Container(
@@ -55,9 +58,11 @@ class _infor extends State<infor> {
                   Text(user.email!, style: TextStyle(color: Colors.white)),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 120)),
-                    Text(
-                      'LV $lv :',
-                      style: TextStyle(color: Colors.white),
+                    Container(
+                      child: ListTile(
+                        title: Text('LV $lv :',
+                            style: TextStyle(color: Colors.white)),
+                      ),
                     ),
                     Container(
                       width: 300,
