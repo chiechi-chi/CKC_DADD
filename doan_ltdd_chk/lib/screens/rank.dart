@@ -51,7 +51,7 @@ class _RankState extends State<Rank> {
                       return Card(
                         child: ListTile(
                           title: Text(
-                            snap[index]['name'],
+                            snap[index]['email'],
                           ),
                           trailing: Text(
                             snap[index]['score'].toString(),

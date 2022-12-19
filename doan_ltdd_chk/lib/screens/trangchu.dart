@@ -1,5 +1,4 @@
 import 'package:doan_ltdd_chk/choidon/chudedomeo/choimotnguoi.dart';
-import 'package:doan_ltdd_chk/screens/Rankingscreen.dart';
 import 'package:doan_ltdd_chk/screens/shopbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
