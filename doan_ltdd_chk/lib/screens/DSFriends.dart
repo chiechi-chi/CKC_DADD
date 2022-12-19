@@ -1,5 +1,14 @@
+import 'package:doan_ltdd_chk/screens/setting_screen.dart';
+import 'package:doan_ltdd_chk/screens/store_screen.dart';
+import 'package:doan_ltdd_chk/screens/sukien.dart';
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'addFriend_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'lichsu.dart';
 
 class DSBanbe extends StatefulWidget {
   const DSBanbe({super.key});
@@ -12,251 +21,145 @@ class _DSBanbe extends State<DSBanbe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff152B42),
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        color: Color(0xff152B42),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-              child: const Text(
-                'Danh Sách bạn bè',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+        padding: EdgeInsets.only(top: 80),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              const Text(
+                "\nDannh Sách bạn bè ",
+                style: const TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Column(
-                children: [
-                  Container(
-                    width: 350,
-                    height: 650,
-                    color: Color(0xff152B39),
-                    child: Column(children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
-                        child: ClipRRect(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 12, 1, 73),
-                                width: 300,
-                                height: 70,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Ban bè 1',
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.normal,
-                                      ),
+              StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection("users")
+                      .snapshots(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                      final snap = snapshot.data!.docs;
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: snap.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            height: 60,
+                            width: double.infinity,
+                            margin: EdgeInsets.only(bottom: 20),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    offset: Offset(2, 2),
+                                    blurRadius: 10,
+                                  )
+                                ]),
+                            child: Stack(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    snap[index]['name'],
+                                    style: const TextStyle(
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
                                     ),
-                                    Container(
-                                      color: Color.fromARGB(255, 12, 1, 73),
-                                      width: 100,
-                                      height: 60,
-                                      child: Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  'assets/223.png'))),
-                                    )
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
-                        child: ClipRRect(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 12, 1, 73),
-                                width: 300,
-                                height: 70,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Ban bè 1',
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Color.fromARGB(255, 12, 1, 73),
-                                      width: 100,
-                                      height: 60,
-                                      child: Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  'assets/223.png'))),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
-                        child: ClipRRect(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 12, 1, 73),
-                                width: 300,
-                                height: 70,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Ban bè 1',
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Color.fromARGB(255, 12, 1, 73),
-                                      width: 100,
-                                      height: 60,
-                                      child: Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  'assets/2234.png'))),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
-                        child: ClipRRect(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 12, 1, 73),
-                                width: 300,
-                                height: 70,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Ban bè 1',
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Color.fromARGB(255, 12, 1, 73),
-                                      width: 100,
-                                      height: 60,
-                                      child: Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  'assets/223.png'))),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
-                        child: ClipRRect(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                color: Color.fromARGB(255, 12, 1, 73),
-                                width: 300,
-                                height: 70,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Ban bè 1',
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                    Container(
-                                      color: Color.fromARGB(255, 12, 1, 73),
-                                      width: 100,
-                                      height: 60,
-                                      child: Center(
-                                          child: Image(
-                                              image: AssetImage(
-                                                  'assets/2234.png'))),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(170, 10, 0, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ThemBanbe()));
-                          },
-                          child: Text(
-                            'Thêm bạn bè +',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontWeight: FontWeight.normal,
+                              ],
                             ),
-                          ),
-                        ),
-                      )
-                    ]),
-                  ),
-                ],
-              ),
+                          );
+                        },
+                      );
+                    } else {
+                      return const SizedBox();
+                    }
+                  })
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: Container(
+        width: 90,
+        child: SizedBox(
+          height: 80,
+          child: FloatingActionButton(
+            child: Icon(
+              Icons.home,
+              size: 40,
             ),
-          ],
+            backgroundColor: Color.fromARGB(255, 40, 3, 105),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => home(),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => sukien(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.flash_on)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Store(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.shop_two)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => history(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.history)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => setting(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.settings)),
+            ],
+          ),
         ),
       ),
     );

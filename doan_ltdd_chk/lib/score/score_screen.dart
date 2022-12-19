@@ -40,8 +40,15 @@ import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/models/action_button.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/lichsu.dart';
+import '../screens/setting_screen.dart';
+import '../screens/store_screen.dart';
+import '../screens/sukien.dart';
+import '../screens/thongtinnhanvat.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({Key? key, required this.score, required this.questions})
@@ -86,6 +93,79 @@ class _ResultScreenState extends State<ResultScreen> {
                 },
               ),
               SizedBox(height: 40),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: Container(
+        width: 90,
+        child: SizedBox(
+          height: 80,
+          child: FloatingActionButton(
+            child: Icon(
+              Icons.home,
+              size: 40,
+            ),
+            backgroundColor: Color.fromARGB(255, 40, 3, 105),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => home(),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => sukien(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.flash_on)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Store(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.shop_two)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => history(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.history)),
+              IconButton(
+                  onPressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => setting(),
+                      ),
+                    );
+                  }),
+                  icon: Icon(Icons.settings)),
             ],
           ),
         ),

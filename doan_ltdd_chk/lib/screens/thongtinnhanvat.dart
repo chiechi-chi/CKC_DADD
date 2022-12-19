@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:getwidget/getwidget.dart';
 
 import 'DSFriends.dart';
 import 'package:flutter/material.dart';
+import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
 
 class infor extends StatefulWidget {
   const infor({super.key});
@@ -11,9 +14,12 @@ class infor extends StatefulWidget {
 }
 
 class _infor extends State<infor> {
+  final double x = 0.0;
+  final double lv = 0;
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
+
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -42,16 +48,26 @@ class _infor extends State<infor> {
                 children: [
                   Image.asset(
                     'assets/h16.png',
-                    width: 60,
-                    height: 60,
+                    width: 70,
+                    height: 70,
                   ),
                   Padding(padding: EdgeInsets.all(10)),
                   Text(user.email!, style: TextStyle(color: Colors.white)),
-                  Row(children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 120)),
                     Text(
-                      'LV 31:',
+                      'LV $lv :',
                       style: TextStyle(color: Colors.white),
+                    ),
+                    Container(
+                      width: 300,
+                      height: 20,
+                      child: GFProgressBar(
+                        percentage: x,
+                        backgroundColor: Color.fromARGB(255, 19, 18, 18),
+                        progressBarColor: Color.fromARGB(255, 241, 233, 232),
+                        lineHeight: 10,
+                      ),
                     ),
                   ]),
                   new SizedBox(
