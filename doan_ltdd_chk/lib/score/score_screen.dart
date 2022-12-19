@@ -35,7 +35,7 @@
 //   }
 // }
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoiLichSu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoitoanhoc.dart';
 import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/models/action_button.dart';

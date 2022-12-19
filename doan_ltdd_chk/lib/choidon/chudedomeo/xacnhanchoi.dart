@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoiLichSu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoitoanhoc.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/models/action_button.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
@@ -63,30 +63,33 @@ class _Xacnhan extends State<Xacnhan> {
                                         fontWeight: FontWeight.normal,
                                         fontSize: 20),
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.all(30),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Hoàn thành:',
-                                          style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 255, 255, 255),
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 20),
-                                        ),
-                                        Text(
-                                          "0/10",
-                                          style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 255, 255, 255),
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 20),
-                                        ),
-                                      ],
-                                    ),
+                                  // Container(
+                                  //   padding: EdgeInsets.all(30),
+                                  //   child: Row(
+                                  //     mainAxisAlignment:
+                                  //         MainAxisAlignment.spaceBetween,
+                                  //     children: [
+                                  //       Text(
+                                  //         'Hoàn thành:',
+                                  //         style: TextStyle(
+                                  //             color: Color.fromARGB(
+                                  //                 255, 255, 255, 255),
+                                  //             fontWeight: FontWeight.normal,
+                                  //             fontSize: 20),
+                                  //       ),
+                                  //       Text(
+                                  //         "0/10",
+                                  //         style: TextStyle(
+                                  //             color: Color.fromARGB(
+                                  //                 255, 255, 255, 255),
+                                  //             fontWeight: FontWeight.normal,
+                                  //             fontSize: 20),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
+                                  SizedBox(
+                                    height: 40,
                                   ),
                                   // Muc do de
                                   StreamBuilder(
@@ -127,6 +130,9 @@ class _Xacnhan extends State<Xacnhan> {
                                       );
                                     },
                                   ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
                                   StreamBuilder(
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
@@ -164,6 +170,9 @@ class _Xacnhan extends State<Xacnhan> {
                                         ],
                                       );
                                     },
+                                  ),
+                                  SizedBox(
+                                    height: 20,
                                   ),
                                   StreamBuilder(
                                     stream: FirebaseFirestore.instance

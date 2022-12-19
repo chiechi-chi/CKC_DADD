@@ -1,4 +1,4 @@
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudeLichSu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudetoanhoc.dart';
 
 import 'xacnhanchoi.dart';
 import 'package:flutter/material.dart';
