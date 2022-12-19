@@ -1,5 +1,3 @@
-import 'package:doan_ltdd_chk/screens/rank_auth_button.dart';
-
 import 'signup.dart';
 import 'store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,7 +24,7 @@ class _loginState extends State<login> {
       user = userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
-        print("Khong tim thay ten tai khoan hoac email");
+        print("Không tìm thấy tên tài khoản hoặc email");
       }
     }
     return user;

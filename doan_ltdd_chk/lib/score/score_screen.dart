@@ -35,20 +35,12 @@
 //   }
 // }
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoitoanhoc.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/models/action_button.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
 import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../screens/lichsu.dart';
-import '../screens/setting_screen.dart';
-import '../screens/store_screen.dart';
-import '../screens/sukien.dart';
-import '../screens/thongtinnhanvat.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({Key? key, required this.score, required this.questions})
@@ -71,6 +63,13 @@ class _ResultScreenState extends State<ResultScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                'High Score:  ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                ),
+              ),
               Text(
                 'Result:  ${widget.score}/ ${widget.questions.length}',
                 style: TextStyle(
@@ -118,66 +117,12 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        child: Container(
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                  onPressed: (() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => sukien(),
-                      ),
-                    );
-                  }),
-                  icon: Icon(Icons.flash_on)),
-              IconButton(
-                  onPressed: (() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Store(),
-                      ),
-                    );
-                  }),
-                  icon: Icon(Icons.shop_two)),
-              IconButton(
-                  onPressed: (() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => history(),
-                      ),
-                    );
-                  }),
-                  icon: Icon(Icons.history)),
-              IconButton(
-                  onPressed: (() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => setting(),
-                      ),
-                    );
-                  }),
-                  icon: Icon(Icons.settings)),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
   @override
   void initState() {
     super.initState();
-    // final provider = context.read<QuizProvider>();
-    // provider.updateHighscore(widget.score);
     _updateHighScore();
   }
 
@@ -197,6 +142,8 @@ class _ResultScreenState extends State<ResultScreen> {
       if (user == null) return;
 
       final lastHighscore = user['score'];
+      final topic = user['topic'];
+      final level = user['levels'];
 
       if (lastHighscore >= widget.score) {
         return;

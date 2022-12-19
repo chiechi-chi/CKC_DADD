@@ -184,10 +184,6 @@ class _QuizScreenState extends State<QuizScreen> {
                   itemCount: currentQuestion.answers.length,
                 ),
               )
-              // Expanded(
-              //     child: ListView.builder(itemBuilder: (context, index){
-
-              //     }))
             ],
           ),
         ),

@@ -21,10 +21,10 @@ class _historyState extends State<history> {
           padding: EdgeInsets.all(16.0),
           child: Column(children: [
             SizedBox(
-              height: 40,
+              height: 60,
             ),
             Text(
-              'RANK',
+              'Lịch sử đấu',
               style: TextStyle(
                   fontSize: 40,
                   color: Colors.white,
@@ -38,6 +38,7 @@ class _historyState extends State<history> {
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
                       .collection('users')
+                      .orderBy('score', descending: true)
                       .snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData)
@@ -51,7 +52,7 @@ class _historyState extends State<history> {
                         return Card(
                           child: ListTile(
                             title: Text(
-                              snap[index]['name'],
+                              snap[index]['email'],
                             ),
                             trailing: Text(
                               snap[index]['score'].toString(),
