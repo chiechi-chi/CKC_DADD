@@ -1,5 +1,5 @@
-import 'package:doan_ltdd_chk/choidon/chudeDiaLy/xacnhanchoiDiaLy.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudeLichSu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeDiaLy/xacnhanchoilichsu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudetoanhoc.dart';
 import 'package:flutter/material.dart';
 
 class NetxPageDiaLy extends StatefulWidget {
@@ -24,7 +24,7 @@ class _NetxPageDiaLy extends State<NetxPageDiaLy> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Câu Hỏi Địa Lý",
+                  "Câu Hỏi Lịch Sử",
                   style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 20,
@@ -361,10 +361,9 @@ class _NetxPageDiaLy extends State<NetxPageDiaLy> {
                     ),
                     MaterialButton(
                       onPressed: (() {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const XacnhanDiaLy()));
+                        Navigator.pop(
+                          context,
+                        );
                       }),
                       child: ClipRRect(
                         child: Container(

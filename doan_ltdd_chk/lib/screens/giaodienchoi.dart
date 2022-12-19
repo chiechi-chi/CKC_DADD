@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/score/score_screen.dart';
 import 'package:doan_ltdd_chk/screens/shopbar.dart';
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:websafe_svg/websafe_svg.dart';
@@ -34,7 +35,8 @@ class _QuizScreenState extends State<QuizScreen> {
       });
 
       if (_currentTime == 0) {
-        pushResultScreen(context);
+        // pushResultScreen(context);
+        _timer.cancel();
       }
     });
   }
@@ -57,32 +59,22 @@ class _QuizScreenState extends State<QuizScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ShopBar(),
-              SizedBox(
-                height: 40,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      LinearProgressIndicator(
-                        value: _currentTime / widget.totalTime,
-                      ),
-                      Center(
-                        child: Text(
-                          _currentTime.toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              Container(
+                child: Row(children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => home()));
+                    },
+                    child: Icon(
+                      Icons.arrow_circle_left_rounded,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+                  )
+                ]),
               ),
-
-              SizedBox(height: 40),
+              SizedBox(height: 20),
               // Hiển thị câu hỏi
               Container(
                 child: Row(
@@ -98,6 +90,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   ],
                 ),
               ),
+
               SizedBox(
                 height: 10,
               ),
@@ -133,6 +126,30 @@ class _QuizScreenState extends State<QuizScreen> {
               SizedBox(
                 height: 20,
               ),
+              SizedBox(
+                height: 40,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      LinearProgressIndicator(
+                        value: _currentTime / widget.totalTime,
+                      ),
+                      Center(
+                        child: Text(
+                          _currentTime.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
 
               Expanded(
                 child: ListView.builder(
@@ -167,6 +184,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   itemCount: currentQuestion.answers.length,
                 ),
               )
+              // Expanded(
+              //     child: ListView.builder(itemBuilder: (context, index){
+
+              //     }))
             ],
           ),
         ),

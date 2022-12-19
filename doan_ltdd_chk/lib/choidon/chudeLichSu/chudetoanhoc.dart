@@ -1,5 +1,5 @@
-import 'package:doan_ltdd_chk/choidon/chudeDiaLy/chudeDiaLy.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoiLichSu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeDiaLy/chudelichsu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoitoanhoc.dart';
 import 'package:doan_ltdd_chk/choidon/chudedomeo/choimotnguoi.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class _NetxPage extends State<NetxPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Câu Hỏi Lịch Sử",
+                  "Câu Hỏi Toán Học",
                   style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 20,
@@ -362,10 +362,9 @@ class _NetxPage extends State<NetxPage> {
                     ),
                     MaterialButton(
                       onPressed: (() {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const XacnhanLichSu()));
+                        Navigator.pop(
+                          context,
+                        );
                       }),
                       child: ClipRRect(
                         child: Container(
