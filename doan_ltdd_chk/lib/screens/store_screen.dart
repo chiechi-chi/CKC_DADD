@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class Store extends StatefulWidget {
@@ -23,8 +24,28 @@ class _Store extends State<Store> {
           color: Color(0xff152B42),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(0, 70, 0, 0)),
+            Container(
+              child: Row(children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => home(),
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                ),
+              ]),
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
             Row(children: [
               Padding(padding: EdgeInsets.all(3)),
               Container(
@@ -150,7 +171,6 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                     
                                       Column(children: [
                                         SizedBox.fromSize(
                                           size: Size(70,
@@ -450,7 +470,6 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                      
                                       Column(children: [
                                         SizedBox.fromSize(
                                           size: Size(70,
@@ -796,7 +815,6 @@ class _Store extends State<Store> {
                                 Column(children: [
                                   Row(
                                     children: [
-                                     
                                       Column(children: [
                                         SizedBox.fromSize(
                                           size: Size(70,
@@ -908,7 +926,6 @@ class _Store extends State<Store> {
                                               fontWeight: FontWeight.normal),
                                         ),
                                       ]),
-                                     
                                     ],
                                   ),
                                 ]),
