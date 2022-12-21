@@ -55,7 +55,7 @@ class _XacnhanLichSu9 extends State<XacnhanLichSu9> {
                                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                                 child: Column(children: [
                                   Text(
-                                    'Vòng 1',
+                                    'Vòng 10',
                                     style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),

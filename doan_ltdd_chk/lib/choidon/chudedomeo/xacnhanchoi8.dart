@@ -56,7 +56,7 @@ class _Xacnhan8 extends State<Xacnhan8> {
                                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                                 child: Column(children: [
                                   Text(
-                                    'Vòng 5',
+                                    'Vòng 9',
                                     style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
