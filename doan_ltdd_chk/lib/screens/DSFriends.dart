@@ -68,7 +68,7 @@ class _DSBanbe extends State<DSBanbe> {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    snap[index]['name'],
+                                    snap[index]['email'],
                                     style: const TextStyle(
                                       color: Colors.black54,
                                       fontWeight: FontWeight.bold,

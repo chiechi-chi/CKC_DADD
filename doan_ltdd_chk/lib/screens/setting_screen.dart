@@ -24,7 +24,27 @@ class _setting extends State<setting> {
           color: Color(0xff152B42),
         ),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Padding(padding: EdgeInsets.fromLTRB(0, 100, 0, 0)),
+          Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0)),
+          Container(
+            child: Row(children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => home(),
+                    ),
+                  );
+                },
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                  size: 35,
+                ),
+              ),
+            ]),
+          ),
+          Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
           Text(
             'Cài Đặt',
             textAlign: TextAlign.center,

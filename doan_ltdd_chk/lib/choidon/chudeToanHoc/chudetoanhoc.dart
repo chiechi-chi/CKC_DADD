@@ -1,26 +1,26 @@
-import 'package:doan_ltdd_chk/choidon/chudeToanHoc/chudetoanhoc.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi1.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi2.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi3.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi4.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi5.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi6.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi7.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi8.dart';
-import 'package:doan_ltdd_chk/choidon/chudedomeo/xacnhanchoi9.dart';
+import 'package:doan_ltdd_chk/choidon/chudeLichSu/chudelichsu.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhanchoitoanhoc.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhanchoitoanhoc1.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhanchoitoanhoc2.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhanchoitoanhoc3.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc4.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc5.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc6.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc7.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc8.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhantoanhoc9.dart';
+import 'package:doan_ltdd_chk/choidon/chudedomeo/choimotnguoi.dart';
 import 'package:doan_ltdd_chk/screens/trangchu.dart';
-
-import 'xacnhanchoi.dart';
 import 'package:flutter/material.dart';
 
-class ChoiDon extends StatefulWidget {
-  const ChoiDon({super.key});
+class NetxPage extends StatefulWidget {
+  const NetxPage({super.key});
 
   @override
-  State<ChoiDon> createState() => _ChoiDon();
+  State<NetxPage> createState() => _NetxPage();
 }
 
-class _ChoiDon extends State<ChoiDon> {
+class _NetxPage extends State<NetxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class _ChoiDon extends State<ChoiDon> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Câu Hỏi Đố Mẹo Dân Gian",
+                  "Câu Hỏi Toán Học",
                   style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 20,
@@ -93,7 +93,8 @@ class _ChoiDon extends State<ChoiDon> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const Xacnhan()));
+                                        builder: (context) =>
+                                            const XacnhanLichSu()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -124,7 +125,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan1()));
+                                            const XacnhanLichSu1()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -158,7 +159,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan2()));
+                                            const XacnhanLichSu2()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -192,7 +193,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan3()));
+                                            const XacnhanLichSu3()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -233,7 +234,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan4()));
+                                            const XacnhanLichSu4()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -264,7 +265,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan5()));
+                                            const XacnhanLichSu5()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -298,7 +299,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan6()));
+                                            const XacnhanLichSu6()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -332,7 +333,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan7()));
+                                            const XacnhanLichSu7()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -373,7 +374,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan8()));
+                                            const XacnhanLichSu8()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -404,7 +405,7 @@ class _ChoiDon extends State<ChoiDon> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const Xacnhan9()));
+                                            const XacnhanLichSu9()));
                               }),
                               child: ClipRRect(
                                 child: Container(
@@ -498,7 +499,11 @@ class _ChoiDon extends State<ChoiDon> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: (() {
+                        Navigator.pop(
+                          context,
+                        );
+                      }),
                       child: Text(
                         "<",
                         style: TextStyle(fontSize: 20),
@@ -532,7 +537,7 @@ class _ChoiDon extends State<ChoiDon> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const NetxPage()));
+                                builder: (context) => const NetxPageDiaLy()));
                       },
                       child: Text(
                         ">",

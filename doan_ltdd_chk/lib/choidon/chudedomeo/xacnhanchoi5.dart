@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doan_ltdd_chk/choidon/chudeLichSu/xacnhanchoitoanhoc.dart';
+import 'package:doan_ltdd_chk/choidon/chudeToanHoc/xacnhanchoitoanhoc.dart';
 import 'package:doan_ltdd_chk/models/Questions.dart';
 import 'package:doan_ltdd_chk/models/action_button.dart';
 import 'package:doan_ltdd_chk/screens/giaodienchoi.dart';
@@ -7,14 +7,14 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class XacnhanDiaLy extends StatefulWidget {
-  const XacnhanDiaLy({super.key});
+class Xacnhan5 extends StatefulWidget {
+  const Xacnhan5({super.key});
 
   @override
-  State<XacnhanDiaLy> createState() => _XacnhanDiaLy();
+  State<Xacnhan5> createState() => _Xacnhan5();
 }
 
-class _XacnhanDiaLy extends State<XacnhanDiaLy> {
+class _Xacnhan5 extends State<Xacnhan5> {
 //  QuestionController _qnController = Get.put(QuestionController());
   @override
   Widget build(BuildContext context) {
@@ -56,47 +56,22 @@ class _XacnhanDiaLy extends State<XacnhanDiaLy> {
                                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                                 child: Column(children: [
                                   Text(
-                                    'Vòng 1',
+                                    'Vòng 5',
                                     style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
                                         fontWeight: FontWeight.normal,
                                         fontSize: 20),
                                   ),
-                                  // Container(
-                                  //   padding: EdgeInsets.all(30),
-                                  //   child: Row(
-                                  //     mainAxisAlignment:
-                                  //         MainAxisAlignment.spaceBetween,
-                                  //     children: [
-                                  //       Text(
-                                  //         'Hoàn thành:',
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //       Text(
-                                  //         "0/10",
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
-                                  // Muc do de
                                   SizedBox(
                                     height: 40,
                                   ),
+                                  // Muc do de
                                   StreamBuilder(
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 1)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 1.4)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -137,7 +112,7 @@ class _XacnhanDiaLy extends State<XacnhanDiaLy> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 2)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 1.4)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -178,7 +153,7 @@ class _XacnhanDiaLy extends State<XacnhanDiaLy> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 3)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 1.4)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {

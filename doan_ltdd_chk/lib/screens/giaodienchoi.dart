@@ -35,8 +35,8 @@ class _QuizScreenState extends State<QuizScreen> {
       });
 
       if (_currentTime == 0) {
-        // pushResultScreen(context);
-        _timer.cancel();
+        pushResultScreen(context);
+        // _timer.cancel();
       }
     });
   }
@@ -63,15 +63,19 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Row(children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => home()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => home(),
+                        ),
+                      );
                     },
                     child: Icon(
-                      Icons.arrow_circle_left_rounded,
+                      Icons.arrow_back,
                       color: Colors.white,
                       size: 35,
                     ),
-                  )
+                  ),
                 ]),
               ),
               SizedBox(height: 20),

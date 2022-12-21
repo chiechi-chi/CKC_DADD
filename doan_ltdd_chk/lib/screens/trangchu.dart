@@ -50,7 +50,7 @@ class _homeState extends State<home> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Rank(),
+                        builder: (context) => Giaodienrank(),
                       ),
                     );
                   },

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,10 +17,30 @@ class _historyState extends State<history> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff152B42),
         body: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(children: [
+            Padding(padding: EdgeInsets.all(30)),
+            Container(
+              child: Row(children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => home(),
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                ),
+              ]),
+            ),
             SizedBox(
               height: 60,
             ),

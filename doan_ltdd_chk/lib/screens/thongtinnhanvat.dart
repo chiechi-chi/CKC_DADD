@@ -63,7 +63,7 @@ class _infor extends State<infor> {
                       width: 300,
                       height: 20,
                       child: GFProgressBar(
-                        percentage: x,
+                        percentage: x + 0.5,
                         backgroundColor: Color.fromARGB(255, 19, 18, 18),
                         progressBarColor: Color.fromARGB(255, 241, 233, 232),
                         lineHeight: 10,
@@ -82,16 +82,6 @@ class _infor extends State<infor> {
                       ),
                     ),
                   ),
-                  /* Container(
-                  height: 200,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Column(
-                    children: [Image.asset('h1.jpg')],
-                  ),
-                ),*/
                   Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20)),
                 ],
               ),

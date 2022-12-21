@@ -7,14 +7,14 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Xacnhan extends StatefulWidget {
-  const Xacnhan({super.key});
+class Xacnhan1 extends StatefulWidget {
+  const Xacnhan1({super.key});
 
   @override
-  State<Xacnhan> createState() => _Xacnhan();
+  State<Xacnhan1> createState() => _Xacnhan1();
 }
 
-class _Xacnhan extends State<Xacnhan> {
+class _Xacnhan1 extends State<Xacnhan1> {
 //  QuestionController _qnController = Get.put(QuestionController());
   @override
   Widget build(BuildContext context) {
@@ -63,31 +63,6 @@ class _Xacnhan extends State<Xacnhan> {
                                         fontWeight: FontWeight.normal,
                                         fontSize: 20),
                                   ),
-                                  // Container(
-                                  //   padding: EdgeInsets.all(30),
-                                  //   child: Row(
-                                  //     mainAxisAlignment:
-                                  //         MainAxisAlignment.spaceBetween,
-                                  //     children: [
-                                  //       Text(
-                                  //         'Hoàn thành:',
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //       Text(
-                                  //         "0/10",
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
                                   SizedBox(
                                     height: 40,
                                   ),
@@ -96,7 +71,7 @@ class _Xacnhan extends State<Xacnhan> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 1)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 1.1)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -137,7 +112,7 @@ class _Xacnhan extends State<Xacnhan> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 2)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 1.1)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -178,7 +153,7 @@ class _Xacnhan extends State<Xacnhan> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 3)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 1.1)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {

@@ -1,3 +1,4 @@
+import 'package:doan_ltdd_chk/screens/trangchu.dart';
 import 'package:flutter/material.dart';
 
 class sukien extends StatefulWidget {
@@ -16,18 +17,26 @@ class _sukienState extends State<sukien> {
         color: Color(0xff152B42),
         child: Column(
           children: [
-            Padding(
-                padding: const EdgeInsets.fromLTRB(20, 50, 0, 0),
-                child: Row(
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          '←',
-                          style: TextStyle(fontSize: 20),
-                        )),
-                  ],
-                )),
+            Padding(padding: EdgeInsets.all(30)),
+            Container(
+              child: Row(children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => home(),
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                ),
+              ]),
+            ),
             Padding(
               padding: const EdgeInsets.all(30),
               child: const Text(

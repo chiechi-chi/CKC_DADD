@@ -7,14 +7,14 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Xacnhan extends StatefulWidget {
-  const Xacnhan({super.key});
+class XacnhanDiaLy extends StatefulWidget {
+  const XacnhanDiaLy({super.key});
 
   @override
-  State<Xacnhan> createState() => _Xacnhan();
+  State<XacnhanDiaLy> createState() => _XacnhanDiaLy();
 }
 
-class _Xacnhan extends State<Xacnhan> {
+class _XacnhanDiaLy extends State<XacnhanDiaLy> {
 //  QuestionController _qnController = Get.put(QuestionController());
   @override
   Widget build(BuildContext context) {
@@ -88,15 +88,15 @@ class _Xacnhan extends State<Xacnhan> {
                                   //     ],
                                   //   ),
                                   // ),
+                                  // Muc do de
                                   SizedBox(
                                     height: 40,
                                   ),
-                                  // Muc do de
                                   StreamBuilder(
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 1)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 3)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -137,7 +137,7 @@ class _Xacnhan extends State<Xacnhan> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 2)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 3)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -178,7 +178,7 @@ class _Xacnhan extends State<Xacnhan> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 3)
-                                        .where("topics", isEqualTo: 1)
+                                        .where("topics", isEqualTo: 3)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
