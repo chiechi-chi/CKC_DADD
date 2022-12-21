@@ -70,7 +70,7 @@ class _XacnhanDiaLy2 extends State<XacnhanDiaLy2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 1)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 3.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -111,7 +111,7 @@ class _XacnhanDiaLy2 extends State<XacnhanDiaLy2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 2)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 3.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -152,7 +152,7 @@ class _XacnhanDiaLy2 extends State<XacnhanDiaLy2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 3)
-                                        .where("topics", isEqualTo: 3)
+                                        .where("topics", isEqualTo: 3.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {

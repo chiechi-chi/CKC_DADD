@@ -63,32 +63,6 @@ class _XacnhanDiaLy extends State<XacnhanDiaLy> {
                                         fontWeight: FontWeight.normal,
                                         fontSize: 20),
                                   ),
-                                  // Container(
-                                  //   padding: EdgeInsets.all(30),
-                                  //   child: Row(
-                                  //     mainAxisAlignment:
-                                  //         MainAxisAlignment.spaceBetween,
-                                  //     children: [
-                                  //       Text(
-                                  //         'Hoàn thành:',
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //       Text(
-                                  //         "0/10",
-                                  //         style: TextStyle(
-                                  //             color: Color.fromARGB(
-                                  //                 255, 255, 255, 255),
-                                  //             fontWeight: FontWeight.normal,
-                                  //             fontSize: 20),
-                                  //       ),
-                                  //     ],
-                                  //   ),
-                                  // ),
-                                  // Muc do de
                                   SizedBox(
                                     height: 40,
                                   ),

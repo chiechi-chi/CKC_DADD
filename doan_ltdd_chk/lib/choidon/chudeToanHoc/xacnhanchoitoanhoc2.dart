@@ -69,7 +69,7 @@ class _XacnhanLichSu2 extends State<XacnhanLichSu2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 1)
-                                        .where("topics", isEqualTo: 2)
+                                        .where("topics", isEqualTo: 2.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -110,7 +110,7 @@ class _XacnhanLichSu2 extends State<XacnhanLichSu2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 2)
-                                        .where("topics", isEqualTo: 2)
+                                        .where("topics", isEqualTo: 2.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
@@ -151,7 +151,7 @@ class _XacnhanLichSu2 extends State<XacnhanLichSu2> {
                                     stream: FirebaseFirestore.instance
                                         .collection('Questions')
                                         .where("levels", isEqualTo: 3)
-                                        .where("topics", isEqualTo: 2)
+                                        .where("topics", isEqualTo: 2.2)
                                         .snapshots(),
                                     builder: (context, snapshot) {
                                       if (!snapshot.hasData) {
