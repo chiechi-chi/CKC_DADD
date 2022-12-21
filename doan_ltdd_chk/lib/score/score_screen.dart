@@ -84,7 +84,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => QuizScreen(
-                        totalTime: 60,
+                        totalTime: 10,
                         questions: widget.questions,
                       ),
                     ),

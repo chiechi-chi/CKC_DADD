@@ -1,3 +1,5 @@
+import 'package:doan_ltdd_chk/screens/quenmatkhau.dart';
+
 import 'signup.dart';
 import 'store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -100,7 +102,7 @@ class _loginState extends State<login> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => home(),
+                                builder: (context) => reset(),
                               ),
                             );
                           },

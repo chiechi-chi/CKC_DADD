@@ -34,10 +34,30 @@ class _QuizScreenState extends State<QuizScreen> {
         _currentTime -= 1;
       });
 
+      // if (_currentTime == 0) {
+      //   do {
+      //     // pushResultScreen(context);
+      //     // // _timer.cancel();
+      //     _currentIndex++;
+      //     _timer.cancel();
+      //     _currentTime = widget.totalTime;
+      //     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      //       print(_currentTime);
+      //       setState(() {
+      //         _currentTime -= 1;
+      //       });
+      //     });
+      //   } while ((_currentTime == 0 &&
+      //       _currentIndex != widget.questions.length - 1));
+      // }
       if (_currentTime == 0) {
+        _timer.cancel();
         pushResultScreen(context);
-        // _timer.cancel();
       }
+      // setState(() {
+      //   _currentIndex++;
+      //   _selectedAnswer = '';
+      // });
     });
   }
 
