@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doan_ltdd_chk/edit.dart';
+import 'package:doan_ltdd_chk/models/quiz_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -16,6 +18,8 @@ class infor extends StatefulWidget {
 class _infor extends State<infor> {
   final double x = 0.0;
   final double lv = 0;
+  
+  
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
@@ -92,7 +96,11 @@ class _infor extends State<infor> {
                 Container(
                   padding: EdgeInsets.all(20),
                   child: ElevatedButton(
-                    onPressed: () => {},
+                    onPressed: () => {
+                      
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Edit()))
+                    },
                     child: Text('Sửa thông tin'),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -123,6 +131,8 @@ class _infor extends State<infor> {
           ],
         ),
       ),
+      
     );
   }
+  
 }
