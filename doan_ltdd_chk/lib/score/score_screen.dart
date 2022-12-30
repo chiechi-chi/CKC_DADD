@@ -63,13 +63,13 @@ class _ResultScreenState extends State<ResultScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'High Score:  ',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
-                ),
-              ),
+              // Text(
+              //   'Highscore:  ${widget.score}/ ${widget.questions.length}',
+              //   style: TextStyle(
+              //     color: Colors.white,
+              //     fontSize: 40,
+              //   ),
+              // ),
               Text(
                 'Result:  ${widget.score}/ ${widget.questions.length}',
                 style: TextStyle(
